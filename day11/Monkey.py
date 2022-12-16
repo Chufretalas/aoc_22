@@ -9,6 +9,7 @@ class Monkey():
     test_number: int
     true_monkey: int
     false_monkey: int
+    times_tested = 0
 
     def throw_item(self, receiver: Monkey):
         item = self.items[0]
@@ -16,6 +17,8 @@ class Monkey():
         receiver.items.append(item)
 
     def test(self, item: int) -> bool:
+        self.times_tested += 1
+
         worry_level = item
         operator, value = self.operation_str.split(" ")
         if value == "old":
