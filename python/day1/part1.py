@@ -1,3 +1,5 @@
+import timeit
+
 def main():
     biggest_calories = 0
     calories = 0
@@ -19,4 +21,6 @@ def main():
 
 
 if __name__ == "__main__":
+    start = timeit.default_timer()
     main()
+    print((timeit.default_timer() - start)*1000000, "us")
